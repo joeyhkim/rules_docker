@@ -198,7 +198,7 @@ def _jar_app_layer_impl(ctx):
     jvm_flags = [ctx.expand_location(flag, ctx.attr.data) for flag in ctx.attr.jvm_flags]
 
     entrypoint = [
-        "/usr/bin/java",
+        "java",
         "-cp",
         # Support optionally passing the classpath as a file.
         "@" + classpath_path if ctx.attr.classpath_as_file else classpath,
